@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/williammunozr/snippetbox/pkg/models/postgres"
+	"snippetbox.hachiko.app/pkg/models/postgres"
 
 	_ "github.com/lib/pq"
 )

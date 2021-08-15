@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/williammunozr/snippetbox/pkg/models"
+	"snippetbox.hachiko.app/pkg/models"
 )
 
 type SnippetModel struct {

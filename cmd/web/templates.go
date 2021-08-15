@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/williammunozr/snippetbox/pkg/forms"
-	"github.com/williammunozr/snippetbox/pkg/models"
+	"snippetbox.hachiko.app/pkg/forms"
+	"snippetbox.hachiko.app/pkg/models"
 )
 
 type templateData struct {

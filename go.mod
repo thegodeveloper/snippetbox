@@ -1,4 +1,4 @@
-module github.com/williammunozr/snippetbox
+module snippetbox.hachiko.app
 
 go 1.16
 
