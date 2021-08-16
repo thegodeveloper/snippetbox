@@ -8,33 +8,37 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"snippetbox.hachiko.app/pkg/models/postgres"
 
+	"github.com/golangcollege/sessions"
 	_ "github.com/lib/pq"
 )
 
 type application struct {
 	errorLog      *log.Logger
 	infoLog       *log.Logger
+	session       *sessions.Session
 	snippets      *postgres.SnippetModel
 	templateCache map[string]*template.Template
 }
 
 func main() {
 	addr := flag.String("addr", ":4000", "HTTP network address")
-	db_host := flag.String("host", "localhost", "PostgreSQL Hostname")
-	db_port := flag.Int("port", 5432, "PostgreSQL Port")
-	db_user := flag.String("user", "hachiko", "PostgreSQL Username")
-	db_password := flag.String("password", "nirvana", "PostgreSQL Password")
-	db_name := flag.String("dbname", "snippetbox", "PostgreSQL DB Name")
-	db_sslmode := flag.String("sslmode", "disable", "PostgreSQL SSLMode")
+	dbHost := flag.String("host", "localhost", "PostgreSQL Hostname")
+	dbPort := flag.Int("port", 5432, "PostgreSQL Port")
+	dbUser := flag.String("user", "hachiko", "PostgreSQL Username")
+	dbPassword := flag.String("password", "nirvana", "PostgreSQL Password")
+	dbName := flag.String("dbname", "snippetbox", "PostgreSQL DB Name")
+	dbSSLMode := flag.String("sslmode", "disable", "PostgreSQL SSLMode")
+	secret := flag.String("secret", "z7Ndh+pPbxzHbZ*+7Pk7qGWhTzbpa@pw", "Secret key")
 	flag.Parse()
 
 	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
 	errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 
-	db, err := openDB(*db_host, *db_port, *db_user, *db_password, *db_name, *db_sslmode)
+	db, err := openDB(*dbHost, *dbPort, *dbUser, *dbPassword, *dbName, *dbSSLMode)
 	if err != nil {
 		errorLog.Fatal(err)
 	}
@@ -45,9 +49,13 @@ func main() {
 		errorLog.Fatal(err)
 	}
 
+	session := sessions.New([]byte(*secret))
+	session.Lifetime = 12 * time.Hour
+
 	app := &application{
 		errorLog:      errorLog,
 		infoLog:       infoLog,
+		session:       session,
 		snippets:      &postgres.SnippetModel{DB: db},
 		templateCache: templateCache,
 	}
