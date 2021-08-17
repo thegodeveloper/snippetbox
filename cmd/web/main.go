@@ -23,6 +23,7 @@ type application struct {
 	session       *sessions.Session
 	snippets      *postgres.SnippetModel
 	templateCache map[string]*template.Template
+	users         *postgres.UserModel
 }
 
 func main() {
@@ -60,6 +61,7 @@ func main() {
 		session:       session,
 		snippets:      &postgres.SnippetModel{DB: db},
 		templateCache: templateCache,
+		users:         &postgres.UserModel{DB: db},
 	}
 
 	tlsConfig := &tls.Config{
@@ -82,9 +84,9 @@ func main() {
 	errorLog.Fatal(err)
 }
 
-func openDB(db_host string, db_port int, db_user string, db_password string, db_name string, db_sslmode string) (*sql.DB, error) {
+func openDB(dbHost string, dbPort int, dbUser string, dbPassword string, dbName string, dbSSLMode string) (*sql.DB, error) {
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=%s",
-		db_host, db_port, db_user, db_password, db_name, db_sslmode)
+		dbHost, dbPort, dbUser, dbPassword, dbName, dbSSLMode)
 
 	db, err := sql.Open("postgres", psqlInfo)
 	if err != nil {
