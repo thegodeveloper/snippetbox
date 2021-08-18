@@ -32,6 +32,8 @@ CREATE TABLE public.snippets (
 	created timestamp NOT NULL,
 	expires timestamp NOT NULL
 );
+
+CREATE INDEX idx_snippets_created ON snippets(created);
 ```
 
 ### Create users table
