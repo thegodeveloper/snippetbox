@@ -14,6 +14,10 @@
             <time>Created: {{humanDate .Created}}</time>
             <time>Expires: {{humanDate .Expires}}</time>
         </div>
+        <div class='metadata'>
+            <padding><a href="/snippet/delete/{{.ID}}">Delete</a></padding>
+            <padding><a href="/snippet/edit/{{.ID}}">Edit</a></padding>
+        </div>
     </div>
     {{end}}
 {{end}}

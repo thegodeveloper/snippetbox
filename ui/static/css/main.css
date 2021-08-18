@@ -245,8 +245,21 @@ button:hover {
     float: right;
 }
 
+.snippet .metadata padding {
+    float: right;
+    padding: 8px;
+}
+
 .snippet .metadata strong {
     color: #34495E;
+}
+
+.snippet .metadata edit:first-child {
+    float: inside;
+}
+
+.snippet .metadata edit:last-child {
+    float: right;
 }
 
 .snippet .metadata time {
