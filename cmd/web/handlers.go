@@ -158,3 +158,17 @@ func (app *application) logoutUser(w http.ResponseWriter, r *http.Request) {
 func ping(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("OK"))
 }
+
+func (app *application) userProfile(w http.ResponseWriter, r *http.Request) {
+	userID := app.session.GetInt(r, "authenticatedUserID")
+
+	user, err := app.users.Get(userID)
+	if err != nil {
+		app.serverError(w, err)
+		return
+	}
+
+	app.render(w, r, "profile.page.tmpl", &templateData{
+		User: user,
+	})
+}
