@@ -146,6 +146,11 @@ func (app *application) loginUser(w http.ResponseWriter, r *http.Request) {
 
 	app.session.Put(r, "authenticatedUserID", id)
 
+	path := app.session.PopString(r, "redirectPathAfterLogin")
+	if path != "" {
+		http.Redirect(w, r, path, http.StatusSeeOther)
+		return
+	}
 	http.Redirect(w, r, "/snippet/create", http.StatusSeeOther)
 }
 
@@ -213,4 +218,8 @@ func (app *application) changePassword(w http.ResponseWriter, r *http.Request) {
 
 	app.session.Put(r, "flash", "Your password has been updated!")
 	http.Redirect(w, r, "/user/profile", http.StatusSeeOther)
+}
+
+func (app *application) about(w http.ResponseWriter, r *http.Request) {
+	app.render(w, r, "about.page.tmpl", nil)
 }
