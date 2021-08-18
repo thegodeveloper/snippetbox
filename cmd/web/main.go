@@ -11,6 +11,7 @@ import (
 	"os"
 	"time"
 
+	"snippetbox.hachiko.app/pkg/models"
 	"snippetbox.hachiko.app/pkg/models/postgres"
 
 	"github.com/golangcollege/sessions"
@@ -22,12 +23,20 @@ type contextKey string
 const contextKeyIsAuthenticated = contextKey("isAuthenticated")
 
 type application struct {
-	errorLog      *log.Logger
-	infoLog       *log.Logger
-	session       *sessions.Session
-	snippets      *postgres.SnippetModel
+	errorLog *log.Logger
+	infoLog  *log.Logger
+	session  *sessions.Session
+	snippets interface { //*postgres.SnippetModel
+		Insert(string, string, string) (int, error)
+		Get(int) (*models.Snippet, error)
+		Latest() ([]*models.Snippet, error)
+	}
 	templateCache map[string]*template.Template
-	users         *postgres.UserModel
+	users         interface { //*postgres.UserModel
+		Insert(string, string, string) error
+		Authenticate(string, string) (int, error)
+		Get(int) (*models.User, error)
+	}
 }
 
 func main() {
