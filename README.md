@@ -2,6 +2,8 @@
 
 Web application with Go and PostgreSQL database.
 
+<img src="img/snippetbox.png" alt="Snippetbox" style="float: left; margin-right: 10px;" />
+
 ## PostgreSQL Database
 
 ### Create PostgreSQL Database
