@@ -78,6 +78,14 @@ INSERT INTO snippets (title, content, created, expires) VALUES (
 );
 ```
 
+## Generating a self-signed TLS
+
+```
+mkdir tls && cd tls
+
+go run /usr/local/go/src/crypto/tls/generate_cert.go --rsa-bits=2048 --host=localhost
+```
+
 ## Run the application
 
 ```
