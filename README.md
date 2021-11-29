@@ -24,6 +24,12 @@ GRANT
 postgres=#
 ```
 
+### Connect to snippetbox database
+
+```
+\connect snippetbox
+```
+
 ### Create snippets table
 
 ```
