@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"snippetbox.hachiko.app/pkg/models"
+	"snippetbox.godeveloper.net/pkg/models"
 
 	"github.com/lib/pq"
 	"golang.org/x/crypto/bcrypt"

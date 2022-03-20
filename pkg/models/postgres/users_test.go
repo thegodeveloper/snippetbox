@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"snippetbox.hachiko.app/pkg/models"
+	"snippetbox.godeveloper.net/pkg/models"
 
 	_ "github.com/lib/pq"
 )

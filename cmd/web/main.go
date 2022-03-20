@@ -11,8 +11,8 @@ import (
 	"os"
 	"time"
 
-	"snippetbox.hachiko.app/pkg/models"
-	"snippetbox.hachiko.app/pkg/models/postgres"
+	"snippetbox.godeveloper.net/pkg/models"
+	"snippetbox.godeveloper.net/pkg/models/postgres"
 
 	"github.com/golangcollege/sessions"
 	_ "github.com/lib/pq"

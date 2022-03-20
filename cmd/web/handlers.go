@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"snippetbox.hachiko.app/pkg/forms"
-	"snippetbox.hachiko.app/pkg/models"
+	"snippetbox.godeveloper.net/pkg/forms"
+	"snippetbox.godeveloper.net/pkg/models"
 )
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {

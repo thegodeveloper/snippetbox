@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"snippetbox.hachiko.app/pkg/models/mock"
+	"snippetbox.godeveloper.net/pkg/models/mock"
 
 	"github.com/golangcollege/sessions"
 )

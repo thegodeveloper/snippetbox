@@ -95,13 +95,13 @@ go run /usr/local/go/src/crypto/tls/generate_cert.go --rsa-bits=2048 --host=loca
 ## Run the application
 
 ```
-go run snippetbox.hachiko.app/cmd/web
+go run snippetbox.godeveloper.net/cmd/web
 ```
 
 ## Build
 
 ```
-go build -o /tmp/snippetbox snippetbox.hachiko.app/cmd/web
+go build -o /tmp/snippetbox snippetbox.godeveloper.net/cmd/web
 
 /tmp/snippetbox
 ```

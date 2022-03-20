@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"snippetbox.hachiko.app/pkg/forms"
-	"snippetbox.hachiko.app/pkg/models"
+	"snippetbox.godeveloper.net/pkg/forms"
+	"snippetbox.godeveloper.net/pkg/models"
 )
 
 type templateData struct {

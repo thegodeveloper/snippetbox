@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"snippetbox.hachiko.app/pkg/models"
+	"snippetbox.godeveloper.net/pkg/models"
 )
 
 type SnippetModel struct {

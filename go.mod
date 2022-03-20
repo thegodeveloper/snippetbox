@@ -1,4 +1,4 @@
-module snippetbox.hachiko.app
+module snippetbox.godeveloper.net
 
 go 1.17
 
