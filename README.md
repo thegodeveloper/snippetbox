@@ -1,6 +1,6 @@
 # Snippetbox Web Application
 
-Web application with Go and PostgreSQL database.
+Web application with Go and PostgreSQL database. This repository is my study notes of the *[Alex Edwards book - Let's Go](https://lets-go.alexedwards.net/)*.
 
 <img src="img/snippetbox.png" alt="Snippetbox" style="float: left; margin-right: 10px;" />
 
