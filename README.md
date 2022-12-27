@@ -6,6 +6,12 @@ Web application with Go and PostgreSQL database. This repository is my study not
 
 ## PostgreSQL Database
 
+### Start PostgreSQL Service
+
+```
+sudo service postgresql start
+```
+
 ### Create PostgreSQL Database
 
 ```
