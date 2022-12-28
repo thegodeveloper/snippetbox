@@ -60,6 +60,17 @@ Type "help" for help.
 greenlight=>
 ```
 
+### Connect using an environment variable
+
+```
+psql $GREENLIGHT_DB_DSN
+psql (13.9 (Debian 13.9-0+deb11u1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+greenlight=>
+```
+
 ### Create snippets table
 
 ```
