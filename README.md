@@ -14,6 +14,8 @@ sudo service postgresql start
 
 ### Create PostgreSQL Database
 
+Option 1:
+
 ```
 sudo -u postgres -i
 
@@ -27,6 +29,16 @@ postgres=# create user hachiko with encrypted password 'nirvana';
 CREATE ROLE
 postgres=# grant all privileges on database snippetbox to hachiko;
 GRANT
+postgres=#
+```
+
+Option 2:
+
+```
+sudo -u postgres psql
+psql (13.9 (Debian 13.9-0+deb11u1))
+Type "help" for help.
+
 postgres=#
 ```
 
