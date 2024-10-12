@@ -9,7 +9,7 @@ Web application with Go and PostgreSQL database. This repository is my study not
 ### Start PostgreSQL Database
 
 - Docker image called `cool_black`
-- Start the image
+- Start the container
 
 ### Connect to PostgreSQL Database
 
