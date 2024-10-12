@@ -24,8 +24,6 @@ postgres=#
 
 ### Create PostgreSQL Database
 
-Option 1:
-
 ```
 postgres=# create database snippetbox;
 CREATE DATABASE
@@ -33,18 +31,21 @@ postgres=# create user hachiko with encrypted password 'nirvana';
 CREATE ROLE
 postgres=# grant all privileges on database snippetbox to hachiko;
 GRANT
-postgres=#
+postgres=# grant all on schema public to hachiko;
+GRANT
+postgres=# alter role hachiko superuser;
+ALTER ROLE
 ```
 
 ### Connect to snippetbox database
 
 ```
-psql --host=localhost --dbname=greenlight --username=hachiko
+psql --host=localhost --dbname=snippetbox --username=hachiko
 Password for user hachiko: nirvana
 psql (17.0, server 15.3 (Debian 15.3-1.pgdg110+1))
 Type "help" for help.
 
-greenlight=>
+snippetbox=>
 ```
 
 ### Connect using an environment variable
