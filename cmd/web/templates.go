@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"snippetbox.godeveloper.net/pkg/forms"
-	"snippetbox.godeveloper.net/pkg/models"
+	"github.com/thegodeveloper/snippetbox/pkg/forms"
+	"github.com/thegodeveloper/snippetbox/pkg/models"
 )
 
 type templateData struct {

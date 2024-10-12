@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"snippetbox.godeveloper.net/pkg/models"
+	"github.com/thegodeveloper/snippetbox/pkg/models"
 
 	"github.com/lib/pq"
 	"golang.org/x/crypto/bcrypt"

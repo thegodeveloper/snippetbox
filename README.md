@@ -123,13 +123,13 @@ go run /usr/local/go/src/crypto/tls/generate_cert.go --rsa-bits=2048 --host=loca
 ## Run the application
 
 ```
-go run snippetbox.godeveloper.net/cmd/web
+go run github.com/thegodeveloper/snippetbox/cmd/web
 ```
 
 ## Build
 
 ```
-go build -o /tmp/snippetbox snippetbox.godeveloper.net/cmd/web
+go build -o /tmp/snippetbox github.com/thegodeveloper/snippetbox/cmd/web
 
 /tmp/snippetbox
 ```

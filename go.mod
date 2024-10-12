@@ -1,6 +1,6 @@
-module snippetbox.godeveloper.net
+module github.com/thegodeveloper/snippetbox
 
-go 1.17
+go 1.23
 
 require (
 	github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f

@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"snippetbox.godeveloper.net/pkg/models"
+	"github.com/thegodeveloper/snippetbox/pkg/models"
 
 	_ "github.com/lib/pq"
 )

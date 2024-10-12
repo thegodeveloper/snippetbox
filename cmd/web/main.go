@@ -11,8 +11,8 @@ import (
 	"os"
 	"time"
 
-	"snippetbox.godeveloper.net/pkg/models"
-	"snippetbox.godeveloper.net/pkg/models/postgres"
+	"github.com/thegodeveloper/snippetbox/pkg/models"
+	"github.com/thegodeveloper/snippetbox/pkg/models/postgres"
 
 	"github.com/golangcollege/sessions"
 	_ "github.com/lib/pq"

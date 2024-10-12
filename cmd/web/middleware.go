@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"snippetbox.godeveloper.net/pkg/models"
+	"github.com/thegodeveloper/snippetbox/pkg/models"
 
 	"github.com/justinas/nosurf"
 )

@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"snippetbox.godeveloper.net/pkg/models"
+	"github.com/thegodeveloper/snippetbox/pkg/models"
 )
 
 type SnippetModel struct {
