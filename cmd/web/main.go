@@ -42,7 +42,7 @@ type application struct {
 
 func main() {
 	addr := flag.String("addr", ":4000", "HTTP network address")
-	dbHost := flag.String("host", "localhost", "PostgreSQL Hostname")
+	dbHost := flag.String("host", "0.0.0.0", "PostgreSQL Hostname")
 	dbPort := flag.Int("port", 5432, "PostgreSQL Port")
 	dbUser := flag.String("user", "hachiko", "PostgreSQL Username")
 	dbPassword := flag.String("password", "nirvana", "PostgreSQL Password")
