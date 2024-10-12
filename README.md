@@ -6,10 +6,20 @@ Web application with Go and PostgreSQL database. This repository is my study not
 
 ## PostgreSQL Database
 
-### Start PostgreSQL Service
+### Start PostgreSQL Database
 
-```
-sudo service postgresql start
+- Docker image called `cool_black`
+- Start the image
+
+### Connect to PostgreSQL Database
+
+```shell
+psql postgres -h localhost -U postgres                                                                                                                                       ─╯
+Password for user postgres: password
+psql (17.0, server 15.3 (Debian 15.3-1.pgdg110+1))
+Type "help" for help.
+
+postgres=#
 ```
 
 ### Create PostgreSQL Database
@@ -17,12 +27,6 @@ sudo service postgresql start
 Option 1:
 
 ```
-sudo -u postgres -i
-
-psql -U postgres
-psql (13.3)
-Type "help" for help.
-
 postgres=# create database snippetbox;
 CREATE DATABASE
 postgres=# create user hachiko with encrypted password 'nirvana';
@@ -32,29 +36,12 @@ GRANT
 postgres=#
 ```
 
-Option 2:
-
-```
-sudo -u postgres psql
-psql (13.9 (Debian 13.9-0+deb11u1))
-Type "help" for help.
-
-postgres=#
-```
-
 ### Connect to snippetbox database
 
 ```
-\connect snippetbox
-```
-
-### Connect as an user
-
-```
-psql --host=localhost --dbname=greenlight --username=greenlight
-Password for user greenlight:
-psql (13.9 (Debian 13.9-0+deb11u1))
-SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+psql --host=localhost --dbname=greenlight --username=hachiko
+Password for user hachiko: nirvana
+psql (17.0, server 15.3 (Debian 15.3-1.pgdg110+1))
 Type "help" for help.
 
 greenlight=>
