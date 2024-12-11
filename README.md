@@ -1,52 +1,17 @@
 # Snippetbox Web Application
 
-Web application with Go and PostgreSQL database. This repository is my study notes of the *[Alex Edwards book - Let's Go](https://lets-go.alexedwards.net/)*.
+- Web Application with Go and PostgreSQL Database. 
+- Based on the *[Alex Edwards book - Let's Go](https://lets-go.alexedwards.net/)*.
+- The book is with MySQL and I migrated to PostgreSQL.
+
+## Application
 
 <img src="img/snippetbox.png" alt="Snippetbox" style="float: left; margin-right: 10px;" />
 
 ## PostgreSQL Database
 
-### Start PostgreSQL Database
-
-- Docker image called `cool_black`
-- Start the container
-
-### Connect to PostgreSQL Database
-
-```shell
-psql postgres -h localhost -U postgres                                                                                                                                       ─╯
-Password for user postgres: password
-psql (17.0, server 15.3 (Debian 15.3-1.pgdg110+1))
-Type "help" for help.
-
-postgres=#
-```
-
-### Create PostgreSQL Database
-
-```
-postgres=# create database snippetbox;
-CREATE DATABASE
-postgres=# create user hachiko with encrypted password 'nirvana';
-CREATE ROLE
-postgres=# grant all privileges on database snippetbox to hachiko;
-GRANT
-postgres=# grant all on schema public to hachiko;
-GRANT
-postgres=# alter role hachiko superuser;
-ALTER ROLE
-```
-
-### Connect to snippetbox database
-
-```
-psql --host=localhost --dbname=snippetbox --username=hachiko
-Password for user hachiko: nirvana
-psql (17.0, server 15.3 (Debian 15.3-1.pgdg110+1))
-Type "help" for help.
-
-snippetbox=>
-```
+- Database is created in Docker.
+- Run `./scripts/init_db.sh` to create the database. (Docker must be running).
 
 ### Connect using an environment variable
 
@@ -57,35 +22,6 @@ SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, co
 Type "help" for help.
 
 greenlight=>
-```
-
-### Create snippets table
-
-```
-CREATE TABLE public.snippets (
-	id serial NOT NULL,
-	title varchar NOT NULL,
-	"content" text NOT NULL,
-	created timestamp NOT NULL,
-	expires timestamp NOT NULL
-);
-
-CREATE INDEX idx_snippets_created ON snippets(created);
-```
-
-### Create users table
-
-```
-CREATE TABLE public.users (
-	id serial NOT NULL,
-	name varchar NOT NULL,
-	email varchar NOT NULL,
-	hashed_password char(60) NOT NULL,
-	created timestamp NOT NULL,
-	active boolean NOT NULL DEFAULT TRUE
-);
-
-ALTER TABLE users ADD CONSTRAINT users_uc_email UNIQUE (email);
 ```
 
 ### How to insert test information
